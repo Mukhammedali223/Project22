@@ -1,6 +1,8 @@
 # Project & Task Tracker
 
 A Trello-lite task management system built with Node.js, Express, MongoDB, and React. This is a university final project demonstrating advanced MongoDB operations including embedded documents, referenced relationships, aggregation pipelines, and compound indexes.
+This project was developed as a final assignment for the "Advanced Databases (NoSQL)" course and focuses on practical application of MongoDB design principles and advanced querying techniques.
+
 
 ---
 
