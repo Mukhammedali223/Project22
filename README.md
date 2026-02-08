@@ -10,7 +10,7 @@ A Trello-lite task management system built with Node.js, Express, MongoDB, and R
 - **Runtime:** Node.js
 - **Framework:** Express.js
 - **Database:** MongoDB with Mongoose ODM
-- **Authentication:** JWT (JSON Web Tokens)
+- **Authentication:** JWT ( Web Tokens)
 - **Password Hashing:** bcryptjs
 
 ### Frontend Stack
@@ -26,8 +26,8 @@ project-task-tracker/
 │   ├── routes/            # API endpoints
 │   ├── middleware/        # Auth middleware
 │   ├── index.js           # Server entry point
-│   └── package.json
-└── client/                # Frontend (to be implemented)
+│   └── package.
+└── client/                # Frontend
     └── ...
 ```
 
@@ -124,9 +124,9 @@ With the index, MongoDB can directly locate the exact subset of documents, reduc
 ### Authentication
 
 #### Register User
-```http
+```
 POST /api/auth/register
-Content-Type: application/json
+Content-Type: application/
 
 {
   "username": "ali",
@@ -136,7 +136,7 @@ Content-Type: application/json
 ```
 
 **Response:**
-```json
+```
 {
   "success": true,
   "data": {
@@ -151,9 +151,9 @@ Content-Type: application/json
 ```
 
 #### Login
-```http
+```
 POST /api/auth/login
-Content-Type: application/json
+Content-Type: application/
 
 {
   "email": "ali@example.com",
@@ -165,7 +165,7 @@ Content-Type: application/json
 
 ---
 
-### Projects (All require authentication)
+### Projects
 
 **Authentication Header Required:**
 ```
@@ -173,13 +173,13 @@ Authorization: Bearer <your_jwt_token>
 ```
 
 #### Get All Projects
-```http
+```
 GET /api/projects
 Authorization: Bearer <token>
 ```
 
 **Response:**
-```json
+```
 {
   "success": true,
   "data": [
@@ -200,10 +200,10 @@ Authorization: Bearer <token>
 ```
 
 #### Create Project
-```http
+```
 POST /api/projects
 Authorization: Bearer <token>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "name": "Mobile App Development",
@@ -212,10 +212,10 @@ Content-Type: application/json
 ```
 
 #### Update Project
-```http
+```
 PUT /api/projects/:id
 Authorization: Bearer <token>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "name": "Updated Project Name",
@@ -224,15 +224,15 @@ Content-Type: application/json
 ```
 
 #### Delete Project
-```http
+```
 DELETE /api/projects/:id
 Authorization: Bearer <token>
 ```
 
-**Note:** Only the project owner can update or delete a project
+
 
 #### Get Tasks for Project
-```http
+```
 GET /api/projects/:id/tasks
 Authorization: Bearer <token>
 ```
@@ -275,7 +275,7 @@ Authorization: Bearer <token>
 ```
 
 #### Get Project Summary (Aggregation Pipeline)
-```http
+```
 GET /api/projects/:id/summary
 Authorization: Bearer <token>
 ```
@@ -314,10 +314,10 @@ Authorization: Bearer <token>
 
 
 #### Create Task
-```http
+```
 POST /api/tasks
 Authorization: Bearer <token>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "title": "Implement user authentication",
@@ -331,10 +331,10 @@ Content-Type: application/json
 ```
 
 #### Update Task (Using $set and $inc)
-```http
+```
 PATCH /api/tasks/:id
 Authorization: Bearer <token>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "status": "inprogress",
@@ -351,10 +351,10 @@ Content-Type: application/json
 ```
 
 #### Add Comment (Using $push)
-```http
+```
 POST /api/tasks/:id/comments
 Authorization: Bearer <token>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "text": "This is looking good, keep it up"
@@ -375,7 +375,7 @@ Content-Type: application/json
 ```
 
 #### Delete Comment (Using $pull)
-```http
+```
 DELETE /api/tasks/:id/comments/:commentId
 Authorization: Bearer <token>
 ```
@@ -426,7 +426,7 @@ The `/api/projects/:id/summary` endpoint uses MongoDB's aggregation framework to
 
 ---
 
-## Report-Friendly API Examples
+## API Examples
 
 This section provides clean, screenshot-ready examples for documentation and reports
 
@@ -435,7 +435,7 @@ This section provides clean, screenshot-ready examples for documentation and rep
 **Request:**
 ```
 POST /api/auth/login
-Content-Type: application/json
+Content-Type: application/
 
 {
   "email": "ali@example.com",
@@ -461,10 +461,10 @@ Content-Type: application/json
 ### 2. Create Project
 
 **Request:**
-```json
+```
 POST /api/projects
 Authorization: Bearer <TOKEN>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "name": "Website Redesign",
@@ -473,7 +473,7 @@ Content-Type: application/json
 ```
 
 **Response:**
-```json
+```
 {
   "success": true,
   "data": {
@@ -490,10 +490,10 @@ Content-Type: application/json
 ### 3. Create Task (with Priority Enum)
 
 **Request:**
-```json
+```
 POST /api/tasks
 Authorization: Bearer <TOKEN>
-Content-Type: application/json
+Content-Type: application/
 
 {
   "title": "Design homepage mockup",
@@ -506,7 +506,7 @@ Content-Type: application/json
 ```
 
 **Response:**
-```json
+```
 {
   "success": true,
   "data": {
@@ -534,7 +534,7 @@ Content-Type: application/json
 ### 4. Project Summary (Aggregation Pipeline)
 
 **Request:**
-```json
+```
 GET /api/projects/65f1234567890abcdef12345/summary
 Authorization: Bearer <TOKEN>
 ```
@@ -712,7 +712,7 @@ Use this checklist to prepare for your project defense:
   - POST http://localhost:5000/api/tasks
   - Header: `Authorization: Bearer <your_token>`
   - Body:
-    ```json
+    ```
     {
       "title": "Test Task",
       "description": "Testing task creation",
